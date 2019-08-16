@@ -1,0 +1,23 @@
+<div class="mt-2">
+    
+    <a [routerLink]="[ '/add-servicio']" class="btn btn-success mb-2">Agregar</a>
+    <table class="table table-light table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let servicio  of servicios">
+            <th scope="row"></th>
+            <td>{{servicio.nombre}}</td>
+            <td>{{servicio.descripcion}}</td>
+            <td><a class="btn btn-success" [routerLink]="[ '/edit-servicio', servicio._id ]">Editar</a> | <button href="" class="btn btn-danger" (click)="eliminarServicio(servicio._id)">Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    
+</div>

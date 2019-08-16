@@ -1,0 +1,22 @@
+<a [routerLink]="[ '/add-publicacion']" class="btn btn-primary mt-5">Crear Publicacion</a>
+<div class="row">
+  <div *ngFor="let publicacion of publicaciones" class="col-md-4 d-flex">
+    <div class="card mt-3 text-justify mr-1" style="width: 18rem;" >
+      <div class="card-body">
+        <h5 class="card-title text-center">{{publicacion.Titulo}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{publicacion.Descripcion}}</h6>
+        <p class="card-text">{{publicacion.Usuario.Nombres}}</p>
+        <h6 class="card-tittle">Contacto</h6>
+        <p class="card-text">{{publicacion.Usuario.Telefono}}, {{publicacion.Usuario.Correo}}</p>
+        <div class="text-center">
+          <a [routerLink]="[ '/edit-publicacion', publicacion._id ]" class="btn btn-success">Editar</a> |
+          <button (click)="deletePubli(publicacion._id)" class="btn btn-danger text-ligth">Eliminar</button>
+        </div>
+        
+      </div>
+  
+</div>
+  </div>
+    
+</div>
+
